@@ -1,5 +1,5 @@
 {
-  "name": "natrous",
+  "name": "natousr",
   "version": "1.0.0",
   "description": "Learning  Node, Express and MongoDB",
   "homepage": "https://github.com/naji-basir/natrous-project#readme",
@@ -16,5 +16,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
   }
 }
