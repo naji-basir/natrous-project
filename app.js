@@ -73,20 +73,14 @@ const deleteTour = (req, res) => {
   res.status(204).json({ status: 'success', data: null });
 };
 
-//GET
-app.get('/api/v1/tours', getallTours);
+// app.get('/api/v1/tours', getallTours);
+// app.get('/api/v1/tours/:id', getTour);
+// app.post('/api/v1/tours', createTour);
+// app.patch('/api/v1/tours/:id', updateTour);
+// app.delete('/api/v1/tours/:id', deleteTour);
 
-//Responding to url parameteres.
-app.get('/api/v1/tours/:id', getTour);
-
-//POST
-app.post('/api/v1/tours', createTour);
-
-//Patch
-app.patch('/api/v1/tours/:id', updateTour);
-
-//Delete
-app.delete('/api/v1/tours/:id', deleteTour);
+app.route('/api/v1/tours').get(getallTours).post(createTour);
+app.route('/api/v1/tour/:id').get(getTour).patch(updateTour).delete(deleteTour);
 
 app.listen(port, () => {
   console.log(`App running on port ${port}...`);
