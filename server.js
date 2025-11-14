@@ -32,7 +32,11 @@ const tourSchema = new mongoose.Schema({
 });
 
 const Tour = mongoose.model('Tour', tourSchema);
-const testTour = new Tour({ name: 'The Buda', rating: 4, price: 4500 });
+const testTour = new Tour({ name: 'The Salsal', price: 20000 });
+testTour
+  .save()
+  .then((doc) => console.log(doc))
+  .catch((err) => console.log('Error💥: ', err));
 
 // Start server
 const port = process.env.PORT || 3000;
